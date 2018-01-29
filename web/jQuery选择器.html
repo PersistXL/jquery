@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        li {
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //id选择器赋值
+//            $("#b04").css("background", "red");
+            //id选择器获取元素的样式
+            var c = $("#b04").css("color");
+            console.log(c);
+        });
+        // 设置多个样式
+        $("li").css({
+         "background-color": "red",
+         "font-size": "20px",
+         "color": "white"
+         });
+
+        // 设置样式，可以根据我们自己的意愿来设置
+        $("li").css("font-size", function (index,value) {
+//             index: 指定当前元素的索引号
+//             value: 表示当前元素要设置的样式，此处指：background-color
+            console.log(index);
+             console.log(value);
+            return (index + 1) * parseInt(value) + "px";
+
+            // 只设置第三个
+            if(i === 2) {
+                return (index + 1) * parseInt(value) + "px";
+            }
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>兄弟很多1</li>
+    <li>兄弟很多2</li>
+    <li>兄弟很多3</li>
+    <li id="b04">兄弟很多4</li>
+    <li>兄弟很多5</li>
+    <li>兄弟很多6</li>
+    <li>兄弟很多7</li>
+    <li>兄弟很多8</li>
+</ul>
+</body>
+</html>

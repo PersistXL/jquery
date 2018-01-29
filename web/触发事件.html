@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+        $("form").on("click","#btnSub",function () {
+            var textVal = $("#txtName").val();
+            if (textVal === "1") {
+                alert("登录成功");
+            }else {
+                //重新获取焦点
+                $("#txtName").val("").trigger("focus");
+            }
+        });
+    });
+</script>
+
+<body>
+<form action="">
+    <label for="txtName">用户名</label><input type="text" id="txtName">
+    <input type="button" value="提交" id="btnSub">
+</form>
+</body>
+</html>
